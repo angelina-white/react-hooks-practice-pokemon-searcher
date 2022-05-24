@@ -1,20 +1,22 @@
 import React from "react";
 import { Card } from "semantic-ui-react";
+import {useState} from "react"
 
-function PokemonCard() {
+function PokemonCard({name, hp, sprites, toggleCard}) {
+
   return (
-    <Card>
+    <Card onClick={toggleCard} className="front">
       <div>
         <div className="image">
-          <img alt="oh no!" />
+          <img alt="oh no!" src={sprites.front}/>
         </div>
         <div className="content">
-          <div className="header">POKEMON NAME HERE</div>
+          <div className="header">{name}</div>
         </div>
         <div className="extra content">
           <span>
             <i className="icon heartbeat red" />
-            POKEMON HP HERE hp
+            {hp}
           </span>
         </div>
       </div>
